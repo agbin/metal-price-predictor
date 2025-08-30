@@ -47,7 +47,7 @@ def train_model(df: pd.DataFrame, metal: str, model_dir: str = 'models', results
         return None, None
         
     # Przygotuj ścieżki zapisu
-    model_filename = f"model_{metal}.pkl"
+    model_filename = f"model_{metal}"  # PyCaret automatycznie dodaje .pkl
     model_save_path = os.path.join(model_dir, model_filename)
     metal_results_dir = os.path.join(results_dir, f"results_{metal}")
     os.makedirs(metal_results_dir, exist_ok=True)

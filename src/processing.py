@@ -247,9 +247,9 @@ def preprocess_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, StandardScaler]:
         if not pd.api.types.is_datetime64_any_dtype(original_data_column):
              original_data_column = pd.to_datetime(original_data_column)
     
-    # Lista kolumn do standaryzacji
-    columns_to_standardize = ['Złoto', 'Srebro', 'Platyna', 'Pallad', 'Miedź',
-                            'inflacja', 'stopy_procentowe', 'bezrobocie', 'pkb',
+    # Lista kolumn do standaryzacji - TYLKO CECHY, NIE CELE!
+    # USUNIĘTO METALE - one są celami predykcji i nie powinny być standaryzowane
+    columns_to_standardize = ['inflacja', 'stopy_procentowe', 'bezrobocie', 'pkb',
                             'pkb_global', 'kurs_usd', 'indeks_vix']
     
     # Filtruj tylko kolumny, które faktycznie istnieją w dataframe

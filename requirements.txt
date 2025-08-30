@@ -1,10 +1,24 @@
-pandas==2.3.1
+# Core ML and Data Science
+pandas==2.1.4
 scikit-learn==1.4.2
 statsmodels==0.14.4
 numpy==1.26.4
 plotly==5.24.1
-streamlit==1.48.0
+streamlit==1.41.1
 pycaret==3.3.2
-yfinance==0.2.65
+
+# Data Sources
+yfinance==0.2.55
+Quandl==3.7.0
+pandas-datareader==0.10.0
+fredapi==0.5.2
+
+# Time Series
 pmdarima==2.0.4
 sktime==0.26.0
+
+# Environment and Config
+python-dotenv==1.1.0
+
+# Compatibility
+protobuf==5.29.4

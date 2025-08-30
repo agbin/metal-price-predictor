@@ -25,14 +25,15 @@ def predict_price(future_data: pd.DataFrame, metal: str) -> Optional[float]:
             logging.error("predict_price: Oczekiwano DataFrame z jedną linią.")
             return None
 
-        model_filename = f"model_{metal}.pkl"
+        model_filename = f"model_{metal}"  # PyCaret automatycznie dodaje .pkl
         model_path = os.path.join('models', model_filename)
+        model_path_with_pkl = model_path + '.pkl'  # Dla sprawdzenia istnienia pliku
 
-        if not os.path.exists(model_path):
-            logging.error(f"Nie znaleziono zapisanego modelu dla {metal} w {model_path}")
+        if not os.path.exists(model_path_with_pkl):
+            logging.error(f"Nie znaleziono zapisanego modelu dla {metal} w {model_path_with_pkl}")
             return None
 
-        # Załadowanie zapisanego modelu
+        # Załadowanie zapisanego modelu (PyCaret load_model automatycznie dodaje .pkl)
         saved_model = load_model(model_path)
         logging.info(f"Załadowano model dla {metal} z {model_path}")
 
