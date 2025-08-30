@@ -7,35 +7,41 @@ System do prognozowania cen metali (złota, srebra, platyny, palladu, miedzi) na
 ```
 metal_predictor/
 │
-├── data/                           # Katalog z danymi
+├── 📁 data/                        # Katalog z danymi
 │   ├── raw/                        # Dane surowe (nieprzetworzone)
-│   │   ├── real_metal_prices.csv   # Historyczne ceny metali z Yahoo Finance
-│   │   └── real_macro_data.csv     # Wskaźniki makroekonomiczne z FRED i Yahoo Finance
-│   │
 │   ├── processed/                  # Dane przetworzone
-│   │   └── combined_real_and_generated_data.csv  # Dane połączone (metale + wskaźniki makro)
-│   │
-│   └── features/                   # Dane z dodanymi cechami inżynieryjnymi
-│       └── engineered_features.csv # Dane z dodanymi średnimi ruchomymi, zmianami procentowymi, itp.
+│   ├── features/                   # Dane z cechami inżynieryjnymi
+│   └── external/                   # Dane zewnętrzne
 │
-├── models/                         # Zapisane modele
+├── 🤖 models/                      # Zapisane modele ML
 │   ├── model_Złoto.pkl            # Model dla złota
 │   ├── model_Srebro.pkl           # Model dla srebra
 │   ├── model_Platyna.pkl          # Model dla platyny
-│   └── scaler.pkl                 # Skaler do normalizacji danych
+│   ├── model_Pallad.pkl           # Model dla palladu
+│   ├── model_Miedź.pkl            # Model dla miedzi
+│   └── results/                   # Wyniki modeli
 │
-├── src/                            # Kod źródłowy
-│   ├── data_loader.py             # Ładowanie i przygotowanie danych
-│   ├── processing.py              # Przetwarzanie danych i inżynieria cech
-│   ├── model_training.py          # Trenowanie modeli
+├── 💻 src/                         # Kod źródłowy
+│   ├── data_loader.py             # Ładowanie danych (Yahoo Finance, FRED)
+│   ├── processing.py              # Przetwarzanie i inżynieria cech
+│   ├── model_training.py          # Trenowanie modeli (PyCaret)
 │   ├── predict.py                 # Predykcja cen metali
-│   ├── compare_methods.py         # Porównanie różnych metod predykcji
-│   ├── exploratory_analysis.py    # Eksploracyjna analiza danych
-│   └── processing_backtest.py     # Przetwarzanie danych do backtestingu
+│   ├── app_logic.py               # Logika aplikacji Streamlit
+│   ├── ui.py                      # Interfejs użytkownika
+│   ├── config.py                  # Konfiguracja systemu
+│   ├── compare_methods.py         # Porównanie algorytmów ML
+│   ├── exploratory_analysis.py    # Analiza eksploracyjna
+│   └── data_enrichment/           # Wzbogacanie danych
 │
-├── results/                        # Wyniki i wizualizacje
+├── 📊 results/                     # Wyniki i wizualizacje
+├── 📓 notebooks/                   # Jupyter notebooks (analiza)
+├── 🔄 backtest/                    # Backtesting modeli
 │
-└── app.py                          # Główna aplikacja (Streamlit)
+├── 🚀 app.py                       # Główna aplikacja Streamlit
+├── 📋 requirements.txt             # Zależności Python
+├── 🐳 Dockerfile                   # Konteneryzacja
+├── 📖 QUICK_START.md              # Szybki start dla użytkowników
+└── 🔧 DEPLOYMENT.md               # Instrukcje wdrożenia
 ```
 
 ## Źródła danych
