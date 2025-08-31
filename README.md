@@ -44,6 +44,18 @@ metal_predictor/
 └── 🔧 DEPLOYMENT.md               # Instrukcje wdrożenia
 ```
 
+## 📋 Zarządzanie projektem
+
+Projekt jest zarządzany przy użyciu tablicy Trello do śledzenia zadań i organizacji workflow.
+
+**Tablica Trello:** [Metal Price Predictor - Zadania](https://trello.com/b/3WvyoC3H/metal-price-predictor)
+
+### Aktualny status:
+- ✅ Pipeline ML zaimplementowany z PyCaret (MAPE 3-4.5%)
+- ✅ Aplikacja Streamlit z wizualizacjami Plotly
+- ✅ System predykcji dla 5 metali (złoto, srebro, platyna, pallad, miedź)
+- 🔄 Testowanie i dokumentacja w toku
+
 ## Źródła danych
 
 System wykorzystuje następujące źródła danych:
